@@ -1,7 +1,26 @@
-.board {}
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
 
-.none {}
+.button {
+    display: flex;
+    flex: 1 0 27%;
+    padding: 0;
+    margin: 2%;
+}
 
-.player1 {}
+.button::before {
+    content: '';
+    display: block;
+    padding-top: 100%; /* Make blocks square */
+}
 
-.player2 {}
+.player1 {
+    background-color: red;
+}
+
+.player2 {
+    background-color: blue;
+}

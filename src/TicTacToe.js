@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Player from "./player";
-import styles from "./TicTacToe.css";
+import "./TicTacToe.css";
 
 function TicTacToe(props) {
     const [currentPlayer, setCurrentPlayer] = useState(Player.Player1);
@@ -15,9 +15,9 @@ function TicTacToe(props) {
     });
 
     return (
-        <div className={styles.board}>
+        <div className="board">
             {board.map((player, i) =>
-                <button key={i} className={styles[player.name]} onClick={player === Player.None ? makeMove.bind(i) : ()=>{}}></button>
+                <button key={i} className={`button ${player.name}`} onClick={player === Player.None ? makeMove.bind(null, i) : ()=>{}}></button>
             )}
         </div>
     );
