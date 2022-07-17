@@ -1,20 +1,16 @@
 .board {
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    width: 50vw;
+    height: 50vw;
 }
 
 .button {
     display: flex;
-    flex: 1 0 27%;
+    width: 29%;
+    height: 29%;
     padding: 0;
     margin: 2%;
-}
-
-.button::before {
-    content: '';
-    display: block;
-    padding-top: 100%; /* Make blocks square */
 }
 
 .player1 {
@@ -23,4 +19,11 @@
 
 .player2 {
     background-color: blue;
+}
+
+@media (orientation:landscape) {
+    .board {
+        height: 50vh;
+        width: 50vh;
+    }
 }
