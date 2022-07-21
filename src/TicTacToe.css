@@ -15,12 +15,12 @@
     border-radius: 10%;
     transition: transform 0.1s ease-out, box-shadow 0.1s ease-out, background-color 0.1s ease-out, color 0.1s ease-out;
     color: #dddddd;
-    box-shadow: -2px 5px 0;
+    box-shadow: 0 3px 0;
 }
 
 .button:active {
     box-shadow: 0 0 0;
-    transform: translateY(5px) translateX(-2px);
+    transform: translateY(3px);
 }
 
 .player1 {
@@ -28,9 +28,19 @@
     background-color: #f46a6a;
 }
 
+.player1win {
+    color: #842929;
+    background-color: #c73737;
+}
+
 .player2 {
     color: #4ca1c0;
     background-color: #66cbf0;
+}
+
+.player2win {
+    color: #18637e;
+    background-color: #1f7999;
 }
 
 @media (orientation:landscape) {
