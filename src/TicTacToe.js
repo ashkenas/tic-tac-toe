@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Player from "./player";
 import "./TicTacToe.css";
 
@@ -8,6 +8,13 @@ function TicTacToe(props) {
     const [board, setBoard] = useState([Player.None, Player.None, Player.None,
                                         Player.None, Player.None, Player.None,
                                         Player.None, Player.None, Player.None]);
+
+    useEffect(() => void (winner !== Player.None && setTimeout(() => {
+        setWinner(Player.None);
+        setBoard([Player.None, Player.None, Player.None,
+                  Player.None, Player.None, Player.None,
+                  Player.None, Player.None, Player.None]);
+    }, 5000)));
 
     const makeMove = (space) => {
         if (board[space] !== Player.None || winner !== Player.None)
