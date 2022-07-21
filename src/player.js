@@ -1,5 +1,6 @@
 export default class Player {
     static None = new Player("none");
+    static Tie = new Player("tie");
     static Player1 = new Player("player1");
     static Player1Win = new Player("player1win");
     static Player2 = new Player("player2");

@@ -29,9 +29,11 @@ function TicTacToe(props) {
             if (board[i * 3] !== Player.None && board[i * 3] === board[i * 3 + 1] && board[i * 3] === board[i * 3 + 2]) {
                 setWinner(board[i * 3]);
                 board[i * 3] = board[i * 3 + 1] = board[i * 3 + 2] = board[i * 3] === Player.Player1 ? Player.Player1Win : Player.Player2Win;
+                return;
             } else if (board[i] !== Player.None && board[i] === board[i + 3] && board[i] === board[i + 6]) {
                 setWinner(board[i]);
                 board[i] = board[i + 3] = board[i + 6] = board[i] === Player.Player1 ? Player.Player1Win : Player.Player2Win;
+                return;
             }
         }
         if (board[4] !== Player.None && board[4] === board[0] && board[4] === board[8]) {
@@ -40,6 +42,8 @@ function TicTacToe(props) {
         } else if (board[4] !== Player.None && board[4] === board[2] && board[4] === board[6]) {
             setWinner(board[4]);
             board[2] = board[4] = board[6] = board[4] === Player.Player1 ? Player.Player1Win : Player.Player2Win;
+        } else if (board.reduce((prev, curr) => prev + +(curr === Player.None), 0) === 0) {
+            setWinner(Player.Tie);
         }
     };
 
